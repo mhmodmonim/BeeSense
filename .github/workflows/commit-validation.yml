@@ -1,0 +1,16 @@
+name: Conventional Commits
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  conventional-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Check Conventional Commits
+        uses: webiny/action-conventional-commits@v1.1.0
